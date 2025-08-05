@@ -1,4 +1,3 @@
-// src/layout/Sidebar.tsx
 import { useState } from 'react';
 import { Link } from 'react-router'; // Se asume react-router-dom
 import { FaHome, FaTasks, FaProjectDiagram, FaUserCircle } from 'react-icons/fa';
