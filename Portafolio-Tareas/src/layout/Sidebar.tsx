@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router'; // Se asume react-router-dom
-import { FaHome, FaTasks, FaProjectDiagram, FaUserCircle } from 'react-icons/fa';
+import { FaHome, FaTasks,  } from 'react-icons/fa';
 import { IoMdMenu } from 'react-icons/io';
 import './Sidebar.css';
 
@@ -34,18 +34,8 @@ const Sidebar = () => {
                 <span>Tareas</span>
               </Link>
             </li>
-            <li>
-              <Link to="/proyectos" onClick={toggleSidebar}>
-                <FaProjectDiagram className="icon" />
-                <span>Proyectos</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/perfil" onClick={toggleSidebar}>
-                <FaUserCircle className="icon" />
-                <span>Perfil</span>
-              </Link>
-            </li>
+           
+            
           </ul>
         </nav>
       </aside>
