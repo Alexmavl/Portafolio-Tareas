@@ -1,44 +1,60 @@
-import { useState } from 'react';
-import { Link } from 'react-router'; // Se asume react-router-dom
-import { FaHome, FaTasks,  } from 'react-icons/fa';
-import { IoMdMenu } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+import { FaHome, FaTasks } from 'react-icons/fa';
 import './Sidebar.css';
 
-const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+export interface SidebarProps {
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+}
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+const Sidebar = ({ isSidebarOpen, toggleSidebar }: SidebarProps) => {
+  const menuItems = [
+    {
+      path: "/",
+      icon: <FaHome className="icon" />,
+      label: "Inicio"
+    },
+    {
+      path: "/tareas",
+      icon: <FaTasks className="icon" />,
+      label: "Tareas"
+    },
+  ];
 
   return (
     <>
-      <button className="hamburger-menu-btn" onClick={toggleSidebar}>
-        <IoMdMenu />
-      </button>
-      <aside className={`sidebar ${isSidebarOpen ? '' : 'sidebar--hidden'}`}>
+      <aside className={`sidebar ${isSidebarOpen ? 'sidebar--open' : 'sidebar--closed'}`}>
         <div className="sidebar-header">
-          <h2>Menú</h2>
+          <button 
+            className={`hamburger-menu-btn ${isSidebarOpen ? 'hamburger-menu-btn--active' : ''}`}
+            onClick={toggleSidebar}
+            aria-label={isSidebarOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isSidebarOpen}
+          >
+            <div className="hamburger-icon">
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </div>
+          </button>
+          <h2>Mi App</h2>
         </div>
-        <nav>
+
+        <nav className="sidebar-nav">
           <ul>
-            <li>
-              <Link to="/" onClick={toggleSidebar}>
-                <FaHome className="icon" />
-                <span>Inicio</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/tareas" onClick={toggleSidebar}>
-                <FaTasks className="icon" />
-                <span>Tareas</span>
-              </Link>
-            </li>
-           
-            
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                <Link to={item.path} className="sidebar-link">
+                  {item.icon}
+                  <span className="sidebar-text">{item.label}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </aside>
+
+      {isSidebarOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
     </>
   );
 };

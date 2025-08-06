@@ -1,15 +1,22 @@
-import React from 'react';
-import Sidebar from './Sidebar';
+// src/layout/Layout.tsx
+import React, { useState } from 'react';
+import Sidebar from './Sidebar'; // Remove the SidebarProps import
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div style={{ display: 'flex' }}>
-      <Sidebar />
-      <main style={{ marginLeft: '220px', padding: '2rem', width: '100%' }}>
+    <div className={`layout-container ${isSidebarOpen ? 'with-sidebar-open' : ''}`}>
+      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <main className="main-content">
         {children}
       </main>
     </div>
