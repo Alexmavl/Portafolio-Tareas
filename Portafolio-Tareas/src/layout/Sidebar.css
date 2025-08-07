@@ -1,3 +1,5 @@
+@import "tailwindcss";
+/*
 .sidebar {
   width: 260px;
   height: 100vh;
@@ -96,7 +98,7 @@
   letter-spacing: 0.3px;
 }
 
-/* Botón Hamburguesa (ahora dentro del header) */
+
 .hamburger-menu-btn {
   position: relative;
   width: 36px;
@@ -111,7 +113,7 @@
   margin: 0;
 }
 
-/* Ícono Hamburguesa */
+
 .hamburger-icon {
   width: 20px;
   height: 16px;
@@ -143,7 +145,7 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Overlay */
+
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -155,7 +157,7 @@
   transition: opacity 0.3s ease;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .sidebar {
     width: 280px;
@@ -178,3 +180,4 @@
   }
 }
 
+*/

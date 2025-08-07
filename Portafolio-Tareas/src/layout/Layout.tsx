@@ -1,4 +1,3 @@
-// src/layout/Layout.tsx
 import React, { useState } from 'react';
 import Sidebar from './Sidebar'; // Remove the SidebarProps import
 

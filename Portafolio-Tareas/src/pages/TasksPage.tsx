@@ -1,5 +1,4 @@
 import '../App.css';
-import './TasksPage.css'; // Asegúrate de importar los estilos
 
 const tasksData = [
   {
