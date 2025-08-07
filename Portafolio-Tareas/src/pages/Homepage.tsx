@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { FaCode, FaGraduationCap, FaLightbulb, FaRocket, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript } from 'react-icons/si';
 import '../App.css';
+
+
 type Tech = {
   name: string;
   icon: React.ReactNode;

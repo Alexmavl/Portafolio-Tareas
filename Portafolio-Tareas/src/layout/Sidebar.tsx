@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaHome, FaTasks } from 'react-icons/fa';
-import './Sidebar.css';
+
 
 export interface SidebarProps {
   isSidebarOpen: boolean;
