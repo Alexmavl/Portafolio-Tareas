@@ -50,7 +50,7 @@ const Homepage = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Sistema de <span className="highlight">Tareas</span>
+               <span className="highlight">Tareas</span>
             </h1>
             <p className="hero-subtitle">
               Desarrollo Web - Una experiencia de aprendizaje transformadora

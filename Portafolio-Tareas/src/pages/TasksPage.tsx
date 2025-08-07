@@ -1,5 +1,51 @@
+import '../App.css';
+import './TasksPage.css'; // Asegúrate de importar los estilos
 
-import '../App.css'; // Asegúrate de que esta ruta sea correcta
+const tasksData = [
+  {
+    id: 1,
+    title: 'Tarea de ejemplo',
+    description: 'Esta es una tarea de ejemplo para el curso de Desarrollo Web.',
+    imageUrl: '/Imagenes/glosario.jpg', // Cambia por tu imagen real
+    link: 'https://github.com/tuusuario/tu-repo-ejemplo',
+  },
+  {
+    id: 2,
+    title: 'Otra tarea',
+    description: 'Completar la funcionalidad del sidebar.',
+    imageUrl: '/Imagenes/Formulario.png',
+    link: 'https://github.com/tuusuario/otro-repo',
+  },
+
+    {
+    id: 3,
+    title: 'Otra tarea',
+    description: 'Completar la funcionalidad del sidebar.',
+    imageUrl: '',
+    link: 'https://github.com/tuusuario/otro-repo',
+  },
+    {
+    id: 4,
+    title: 'Otra tarea',
+    description: 'Completar la funcionalidad del sidebar.',
+    imageUrl: '',
+    link: 'https://github.com/tuusuario/otro-repo',
+  },
+    {
+    id: 5,
+    title: 'Otra tarea',
+    description: 'Completar la funcionalidad del sidebar.',
+    imageUrl: '',
+    link: 'https://github.com/tuusuario/otro-repo',
+  },
+    {
+    id: 6,
+    title: 'Otra tarea',
+    description: 'Completar la funcionalidad del sidebar.',
+    imageUrl: '',
+    link: 'https://github.com/tuusuario/otro-repo',
+  },
+];
 
 const TasksPage = () => {
   return (
@@ -10,16 +56,16 @@ const TasksPage = () => {
       </div>
 
       <div className="tasks-grid">
-        {/* Aquí puedes agregar componentes para mostrar tus tareas */}
-        {/* Por ejemplo: un componente <TaskItem /> */}
-        <div className="card">
-          <h3>Tarea de ejemplo</h3>
-          <p>Esta es una tarea de ejemplo para el curso de Desarrollo Web.</p>
-        </div>
-        <div className="card">
-          <h3>Otra tarea</h3>
-          <p>Completar la funcionalidad del sidebar.</p>
-        </div>
+        {tasksData.map(({ id, title, description, imageUrl, link }) => (
+          <div key={id} className="card">
+            <img src={imageUrl} alt={title} className="card-image" />
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <a href={link} target="_blank" rel="noopener noreferrer" className="card-link">
+              Ver contenido teórico
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
