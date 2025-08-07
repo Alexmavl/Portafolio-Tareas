@@ -1,6 +1,6 @@
-// src/layout/Layout.tsx
 import React, { useState } from 'react';
-import Sidebar from './Sidebar'; // Remove the SidebarProps import
+import Sidebar from './Sidebar';
+import '../index.css';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,9 +14,18 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className={`layout-container ${isSidebarOpen ? 'with-sidebar-open' : ''}`}>
+    <div className="flex min-h-screen bg-gray-900 text-white">
+      {/* Sidebar component */}
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <main className="main-content">
+
+      {/* Main content area */}
+      <main
+        className={`
+          flex-1 p-8 md:p-12
+          transition-all duration-300 ease-in-out
+          ${isSidebarOpen ? 'md:ml-64' : 'md:ml-20'}
+        `}
+      >
         {children}
       </main>
     </div>
