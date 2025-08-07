@@ -4,7 +4,7 @@ import '../App.css'; // You can remove this line if all styles are converted to 
 const tasksData = [
   {
     id: 1,
-    title: 'Tarea de ejemplo',
+    title: 'Glosario Desarrollo Web',
     description: 'Esta es una tarea de ejemplo para el curso de Desarrollo Web.',
     imageUrl: '/Imagenes/glosario.jpg',
     link: 'https://github.com/tuusuario/tu-repo-ejemplo',
