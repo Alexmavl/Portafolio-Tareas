@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaCode, FaGraduationCap, FaLightbulb, FaRocket, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript } from 'react-icons/si';
 import '../App.css';
-
+import '../pages/Homepage.css'
 type Tech = {
   name: string;
   icon: React.ReactNode;
@@ -50,7 +50,7 @@ const Homepage = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Sistema de <span className="highlight">Tareas</span>
+               <span className="highlight">Tareas</span>
             </h1>
             <p className="hero-subtitle">
               Desarrollo Web - Una experiencia de aprendizaje transformadora

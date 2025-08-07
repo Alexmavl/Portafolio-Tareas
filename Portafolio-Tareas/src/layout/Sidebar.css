@@ -23,6 +23,7 @@
   width: 80px;
 }
 
+
 .sidebar--closed .sidebar-text,
 .sidebar--closed .sidebar-header h2 {
   display: none;
@@ -176,3 +177,4 @@
     height: 12px;
   }
 }
+
