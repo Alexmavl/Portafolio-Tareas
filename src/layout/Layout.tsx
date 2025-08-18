@@ -67,8 +67,13 @@ const Layout = ({ children }: LayoutProps) => {
           )}
         </header>
 
-        {/* Contenido */}
-        <main className="flex-grow p-6 sm:p-8 md:p-12">{children}</main>
+       {/* Contenido */}
+<main className="flex-grow">
+  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-12">
+    {children}
+  </div>
+</main>
+
 
         {/* Footer */}
         <footer className="bg-gray-800 text-gray-400 text-sm py-4 text-center border-t border-gray-700">
