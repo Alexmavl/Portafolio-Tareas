@@ -22,7 +22,6 @@ const tasksData = [
     title: 'Página con aplicaciones responsivas',
     description: 'Implementación de diseño responsive con CSS Grid y Flexbox.',
     imageUrl: '/Imagenes/TareaR.png',
-    link: 'https://github.com/Alexmavl/Tarea-Responsiva',
     repo: 'https://github.com/Alexmavl/Tarea-Responsiva',
   },
   {/*
