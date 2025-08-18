@@ -61,10 +61,7 @@ const glowClasses: Record<GlowVariant, string> = {
   teal:  'from-cyan-400/35 via-teal-400/20',
   white: 'from-white/25 via-gray-300/10',
 };
-/**
- * GlowBelow: resplandor difuminado debajo del elemento
- * Úsalo como HERMANO del GlassCard dentro de un wrapper relative
- */
+
 const GlowBelow: React.FC<{ variant?: GlowVariant; widthClass?: string; heightClass?: string; className?: string }>
 = ({ variant = 'white', widthClass = 'w-[85%]', heightClass = 'h-20', className = '' }) => (
   <div
@@ -116,8 +113,7 @@ const Homepage: React.FC = () => {
   return (
     <>
       <style>{ANIM_CSS}</style>
-
-      <div className="bg-gray-950 text-gray-100 font-sans leading-relaxed selection:bg-teal-500/20 selection:text-teal-200">
+<div className="bg-gray-950/50 text-gray-100 font-sans leading-relaxed selection:bg-teal-500/20 selection:text-teal-200 backdrop-blur-md border border-white/10 rounded-xl shadow-lg">
        <section
   id="hero"
   className={`section-observer relative min-h-[92vh] flex items-center justify-center text-center overflow-hidden transition-all duration-1000 ${visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
