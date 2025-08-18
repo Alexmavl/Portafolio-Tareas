@@ -8,25 +8,25 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // solo afecta escritorio
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // menú móvil dropdown
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // escritorio
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // móvil
 
   const toggleSidebar = () => setIsSidebarOpen((v) => !v);
   const toggleMobileMenu = () => setIsMobileMenuOpen((v) => !v);
 
+  // Margen lateral sincronizado con el sidebar SOLO en md+
+  const desktopMargin = isSidebarOpen ? "md:ml-64" : "md:ml-20";
+
   return (
-    <div className="flex min-h-screen bg-black text-white">
-      {/* Sidebar SOLO en escritorio */}
+    <div className="min-h-screen bg-black text-white">
+      {/* Sidebar: hidden en móvil, fixed en md+ */}
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      {/* Contenedor principal */}
+      {/* Wrapper del contenido (header/main/footer) con margen lateral en md+ */}
       <div
-        className={[
-          "flex flex-col flex-1 transition-[margin] duration-300 ease-in-out",
-          isSidebarOpen ? "md:ml-64" : "md:ml-20", // margen solo en md+
-        ].join(" ")}
+        className={`flex flex-col min-h-screen transition-[margin] duration-300 ease-in-out ${desktopMargin}`}
       >
-        {/* Header SOLO móvil con botón hamburguesa */}
+        {/* Header SOLO móvil */}
         <header className="md:hidden sticky top-0 z-50 bg-black/90 backdrop-blur supports-[backdrop-filter]:bg-black/60">
           <div className="flex items-center justify-between px-4 py-3">
             <button
@@ -36,15 +36,28 @@ const Layout = ({ children }: LayoutProps) => {
               aria-expanded={isMobileMenuOpen}
             >
               <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`block h-0.5 w-full bg-white rounded-sm transition-transform duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-                <span className={`block h-0.5 w-full bg-white rounded-sm transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`} />
-                <span className={`block h-0.5 w-full bg-white rounded-sm transition-transform duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+                <span
+                  className={`block h-0.5 w-full bg-white rounded-sm transition-transform duration-300 ${
+                    isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-full bg-white rounded-sm transition-opacity duration-300 ${
+                    isMobileMenuOpen ? "opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-full bg-white rounded-sm transition-transform duration-300 ${
+                    isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                />
               </div>
             </button>
+
             <span className="text-sm text-gray-300">Menú</span>
           </div>
 
-          {/* Dropdown móvil (no empuja el layout, posición absoluta) */}
+          {/* Dropdown móvil flotante (no empuja el layout) */}
           {isMobileMenuOpen && (
             <div className="absolute left-0 right-0 top-full z-40 mx-3 mt-2 rounded-xl border border-white/10 bg-neutral-900/95 shadow-2xl">
               <nav className="py-2">
@@ -67,15 +80,16 @@ const Layout = ({ children }: LayoutProps) => {
           )}
         </header>
 
-       {/* Contenido */}
-<main className="flex-grow">
-  <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-12">
-    {children}
-  </div>
-</main>
+        {/* CONTENIDO */}
+        {/* pt-14 en móvil para que el hero NO quede debajo del header sticky */}
+        <main className="flex-grow pt-14 md:pt-0">
+          {/* Fluido total en escritorio; padding agradable en todas las vistas */}
+          <div className="w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-20 md:max-w-none">
+            {children}
+          </div>
+        </main>
 
-
-        {/* Footer */}
+        {/* FOOTER (se adapta al sidebar por el mismo margen del wrapper) */}
         <footer className="bg-gray-800 text-gray-400 text-sm py-4 text-center border-t border-gray-700">
           <p>
             © {new Date().getFullYear()} Portafolio de Tareas — Desarrollado por{" "}
