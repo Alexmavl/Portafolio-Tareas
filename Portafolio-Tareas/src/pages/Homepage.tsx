@@ -51,22 +51,22 @@ const Homepage = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-gray-100 font-sans leading-relaxed overflow-x-hidden">
-      {/* Hero Section */}
+     <div className="bg-gray-900 text-gray-100 font-sans leading-relaxed">
+{/* Hero Section */}
       <section
         id="hero"
         className={`section-observer relative h-screen flex items-center justify-center text-center overflow-hidden transition-all duration-1000 ${visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
       >
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-teal-900/20">
-          <div 
+          <div
             className="absolute inset-0 opacity-10"
             style={{
               background: `radial-gradient(circle at ${50 + scrollY * 0.1}% ${50 + scrollY * 0.05}%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)`,
             }}
           />
         </div>
-        
+
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60" />
@@ -75,39 +75,46 @@ const Homepage = () => {
           <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-pulse opacity-50" />
         </div>
 
-        <div className="relative z-10 p-8 max-w-4xl mx-auto">
+        <div className="relative z-10 p-8 max-w-3xl mx-auto flex flex-col items-center">
           <div className="mb-8 animate-fade-in-up">
             <div className="inline-block p-4 rounded-full bg-gradient-to-r from-blue-600 to-teal-600 shadow-2xl mb-6">
               <FaCode className="text-4xl text-white" />
             </div>
           </div>
-          
-          <h2 className="text-6xl md:text-8xl font-black mb-6 animate-fade-in-up delay-200">
+
+          <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-xl mb-6 animate-fade-in-up delay-200">
+            <img
+              src="/Imagenes/Perfil.jpeg" 
+              alt="Foto de perfil"
+              className="object-cover w-full h-full"
+            />
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-black mb-4 animate-fade-in-up delay-300 text-center">
             <span className="bg-gradient-to-r from-blue-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-            Bienvenidos a mi portafolio de tareas
+              ¡Hola! Soy Marvin Vásquez
             </span>
           </h2>
-          
-          <p className="text-2xl md:text-3xl font-light max-w-3xl mx-auto mb-8 text-gray-300 animate-fade-in-up delay-400">
-            Desarrollo Web - Una experiencia de aprendizaje 
-            <span className="text-teal-400 font-medium"> transformadora</span>
+
+          <p className="text-lg md:text-xl font-light max-w-2xl mx-auto mb-6 text-gray-300 animate-fade-in-up delay-400 text-center">
+            Bienvenido a mi portafolio de tareas de Desarrollo Web. Aquí comparto mi aprendizaje y proyectos realizados durante este curso.
           </p>
-          
-          <div className="animate-fade-in-up delay-600 mb-12">
+
+          <div className="animate-fade-in-up delay-600 mb-8">
             <img
               src="/Imagenes/LogotipoUMG.png"
               alt="Universidad Mariano Gálvez"
-              className="h-28 md:h-36 mx-auto filter drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+              className="h-20 md:h-24 mx-auto filter drop-shadow-2xl hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* Scroll Indicator */}
-          <button 
+          <button
             onClick={scrollToNext}
             className="animate-bounce animate-fade-in-up delay-800 text-teal-400 hover:text-teal-300 transition-colors duration-300"
           >
             <FaArrowDown className="text-2xl mx-auto" />
-            <span className="block text-sm mt-2">Descubre más</span>
+            <span className="block text-sm mt-2">Descubre mis pensamientos!</span>
           </button>
         </div>
       </section>
@@ -115,7 +122,7 @@ const Homepage = () => {
       {/* Development Section */}
       <section
         id="development"
-        className={`section-observer relative min-h-screen py-32 bg-gradient-to-b from-gray-900 to-gray-800 transition-all duration-1000 ${visibleSections.has('development') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`section-observer relative min-h-screen py-24 bg-gradient-to-b from-gray-900 to-gray-800 transition-all duration-1000 ${visibleSections.has('development') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         <div className="container mx-auto px-6 md:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -162,7 +169,7 @@ const Homepage = () => {
                 <img
                   src="/Imagenes/Home1.jpg"
                   alt="Desarrollo Web Moderno"
-                  className="relative w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  className="relative w-3/4 h-auto mx-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
                   <span className="text-2xl font-bold text-white">Desarrollo Web Moderno</span>
@@ -176,7 +183,7 @@ const Homepage = () => {
       {/* Technologies Section */}
       <section
         id="technologies"
-        className={`section-observer relative min-h-screen py-32 bg-gradient-to-b from-gray-800 to-gray-900 transition-all duration-1000 ${visibleSections.has('technologies') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`section-observer relative min-h-screen py-24 bg-gradient-to-b from-gray-800 to-gray-900 transition-all duration-1000 ${visibleSections.has('technologies') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         <div className="container mx-auto px-6 md:px-8">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
@@ -227,7 +234,7 @@ const Homepage = () => {
                 <img
                   src="/Imagenes/Home2.jpg"
                   alt="Tecnologías de Desarrollo"
-                  className="relative w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  className="relative w-3/4 h-auto mx-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
                   <span className="text-2xl font-bold text-white">Stack Tecnológico</span>
@@ -241,7 +248,7 @@ const Homepage = () => {
       {/* Vision Section */}
       <section
         id="vision"
-        className={`section-observer relative min-h-screen py-32 bg-gradient-to-b from-gray-900 to-gray-800 transition-all duration-1000 ${visibleSections.has('vision') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`section-observer relative min-h-screen py-24 bg-gradient-to-b from-gray-900 to-gray-800 transition-all duration-1000 ${visibleSections.has('vision') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         <div className="container mx-auto px-6 md:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -299,7 +306,7 @@ const Homepage = () => {
                 <img
                   src="/Imagenes/Home 3.jpg"
                   alt="Visión del Desarrollo"
-                  className="relative w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  className="relative w-3/4 h-auto mx-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
                   <span className="text-2xl font-bold text-white">Nuestra Visión</span>
@@ -313,7 +320,7 @@ const Homepage = () => {
       {/* Future Section */}
       <section
         id="future"
-        className={`section-observer relative min-h-screen py-32 bg-gradient-to-b from-gray-800 to-gray-900 transition-all duration-1000 ${visibleSections.has('future') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`section-observer relative min-h-screen py-24 bg-gradient-to-b from-gray-800 to-gray-900 transition-all duration-1000 ${visibleSections.has('future') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         <div className="container mx-auto px-6 md:px-8">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
@@ -369,7 +376,7 @@ const Homepage = () => {
                 <img
                   src="/Imagenes/Home 4.jpg"
                   alt="Futuro del Desarrollo"
-                  className="relative w-full h-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  className="relative w-3/4 h-auto mx-auto rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
                   <span className="text-2xl font-bold text-white">El Futuro Digital</span>
