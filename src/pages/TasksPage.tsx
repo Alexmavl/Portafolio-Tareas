@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; // Agrega esta línea
 import '../App.css';
 
 const tasksData = [
@@ -7,7 +8,6 @@ const tasksData = [
     description: 'Esta es una tarea de ejemplo para el curso de Desarrollo Web.',
     imageUrl: '/Imagenes/glosario.jpg',
     link: '/glosario',
-    
   },
   {
     id: 2,
@@ -22,15 +22,16 @@ const tasksData = [
     title: 'Página con aplicaciones responsivas',
     description: 'Implementación de diseño responsive con CSS Grid y Flexbox.',
     imageUrl: '/Imagenes/TareaR.png',
+    link: null, // No hay un enlace interno, por lo que el botón "Ver Tarea" no se mostrará.
     repo: 'https://github.com/Alexmavl/Tarea-Responsiva',
   },
-  {/*
+  /*
   {
     id: 4,
     title: 'Dashboard Interactivo',
     description: 'Panel de administración con componentes dinámicos.',
     imageUrl: '',
-    link: 'https://github.com/tuusuario/dashboard-repo',
+    link: null,
     repo: 'https://github.com/tuusuario/dashboard-repo',
   },
   {
@@ -38,7 +39,7 @@ const tasksData = [
     title: 'API REST con Node.js',
     description: 'Desarrollo de API completa con autenticación JWT.',
     imageUrl: '',
-    link: 'https://github.com/tuusuario/api-repo',
+    link: null,
     repo: 'https://github.com/tuusuario/api-repo',
   },
   {
@@ -46,10 +47,10 @@ const tasksData = [
     title: 'E-commerce Frontend',
     description: 'Tienda online con carrito de compras y pasarela de pago.',
     imageUrl: '',
-    link: 'https://github.com/tuusuario/ecommerce-repo',
+    link: null,
     repo: 'https://github.com/tuusuario/ecommerce-repo',
   },
-   */}
+  */
 ];
 
 // Componente de icono GitHub SVG
@@ -200,16 +201,15 @@ const TasksPage = () => {
                 )}
                 
                 {/* Project Link Button */}
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 border border-blue-500/50 hover:border-teal-400/50"
-                >
-                  <CodeIcon className="w-5 h-5" />
-                  <span>Ver tarea</span>
-                  <ExternalLinkIcon className="w-4 h-4" />
-                </a>
+                {link && (
+                  <Link
+                    to={link}
+                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 border border-blue-500/50 hover:border-teal-400/50"
+                  >
+                    <CodeIcon className="w-5 h-5" />
+                    <span>Ver tarea</span>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

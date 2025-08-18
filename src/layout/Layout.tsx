@@ -51,9 +51,9 @@ const Layout = () => {
       {/* Sidebar: hidden en móvil, fixed en md+ */}
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      {/* Wrapper del contenido con transición suave */}
+      {/* Wrapper del contenido con altura específica para desktop */}
       <div
-        className={`flex min-h-dvh flex-col transition-all duration-300 ease-in-out ${desktopMargin}`}
+        className={`flex flex-col min-h-screen md:min-h-dvh transition-all duration-300 ease-in-out ${desktopMargin}`}
       >
         {/* Header SOLO móvil - mejorado */}
         <header className="md:hidden sticky top-0 z-40 bg-black/90 backdrop-blur-sm supports-[backdrop-filter]:bg-black/70 border-b border-white/10">
@@ -131,14 +131,14 @@ const Layout = () => {
           </div>
         </header>
 
-        {/* CONTENIDO - ajuste natural */}
-        <main>
-          <div className="w-full mx-auto px-3 py-4 sm:px-4 sm:py-6 md:px-6 md:py-8 lg:px-8 xl:px-12 2xl:px-16">
+        {/* CONTENIDO - flex-1 solo para empujar footer */}
+        <main className="flex-1">
+          <div className="w-full mx-auto px-3 py-6 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <Outlet />
           </div>
         </main>
 
-        {/* FOOTER mejorado */}
+        {/* FOOTER */}
         <footer className="bg-gray-900/80 backdrop-blur-sm text-gray-400 text-xs sm:text-sm py-4 md:py-6 text-center border-t border-gray-700/50">
           <div className="max-w-4xl mx-auto px-4">
             <p className="mb-2">
