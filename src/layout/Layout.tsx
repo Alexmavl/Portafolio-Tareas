@@ -1,15 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import  { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import "../index.css";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: LayoutProps) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // escritorio
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // móvil
+const Layout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Escritorio
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Móvil
 
   const toggleSidebar = () => setIsSidebarOpen((v) => !v);
   const toggleMobileMenu = () => setIsMobileMenuOpen((v) => !v);
@@ -18,13 +14,13 @@ const Layout = ({ children }: LayoutProps) => {
   const desktopMargin = isSidebarOpen ? "md:ml-64" : "md:ml-20";
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-dvh bg-black text-white">
       {/* Sidebar: hidden en móvil, fixed en md+ */}
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       {/* Wrapper del contenido (header/main/footer) con margen lateral en md+ */}
       <div
-        className={`flex flex-col min-h-screen transition-[margin] duration-300 ease-in-out ${desktopMargin}`}
+        className={`flex min-h-dvh flex-col transition-[margin] duration-300 ease-in-out ${desktopMargin}`}
       >
         {/* Header SOLO móvil */}
         <header className="md:hidden sticky top-0 z-50 bg-black/90 backdrop-blur supports-[backdrop-filter]:bg-black/60">
@@ -57,7 +53,7 @@ const Layout = ({ children }: LayoutProps) => {
             <span className="text-sm text-gray-300">Menú</span>
           </div>
 
-          {/* Dropdown móvil flotante (no empuja el layout) */}
+          {/* Dropdown móvil flotante */}
           {isMobileMenuOpen && (
             <div className="absolute left-0 right-0 top-full z-40 mx-3 mt-2 rounded-xl border border-white/10 bg-neutral-900/95 shadow-2xl">
               <nav className="py-2">
@@ -75,21 +71,33 @@ const Layout = ({ children }: LayoutProps) => {
                 >
                   Tareas
                 </Link>
+                <Link
+                  to="/glosario"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-3 text-gray-200 hover:bg-white/10"
+                >
+                  Glosario
+                </Link>
+                <Link
+                  to="/tarea2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-3 text-gray-200 hover:bg-white/10"
+                >
+                  Tarea 2
+                </Link>
               </nav>
             </div>
           )}
         </header>
 
         {/* CONTENIDO */}
-        {/* pt-14 en móvil para que el hero NO quede debajo del header sticky */}
-        <main className="flex-grow pt-14 md:pt-0">
-          {/* Fluido total en escritorio; padding agradable en todas las vistas */}
+        <main className="flex-1 pt-14 md:pt-0">
           <div className="w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-20 md:max-w-none">
-            {children}
+            <Outlet /> {/* ✅ Aquí se renderizan todas las páginas */}
           </div>
         </main>
 
-        {/* FOOTER (se adapta al sidebar por el mismo margen del wrapper) */}
+        {/* FOOTER */}
         <footer className="bg-gray-800 text-gray-400 text-sm py-4 text-center border-t border-gray-700">
           <p>
             © {new Date().getFullYear()} Portafolio de Tareas — Desarrollado por{" "}
