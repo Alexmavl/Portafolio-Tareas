@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Homepage from "./pages/Homepage";
 import TaskPage from "./pages/TasksPage";
-import Glosario from "./components/Glosario"; // Nombre y ruta correctos
+import Glosario from "./components/glosario"; // Nombre y ruta correctos
 
 function App() {
   return (
