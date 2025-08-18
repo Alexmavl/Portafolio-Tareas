@@ -113,7 +113,8 @@ const Homepage: React.FC = () => {
   return (
     <>
       <style>{ANIM_CSS}</style>
-<div className="bg-gray-950/50 text-gray-100 font-sans leading-relaxed selection:bg-teal-500/20 selection:text-teal-200 backdrop-blur-md border border-white/10 rounded-xl shadow-lg">
+<div className="mx-auto w-full max-w-6xl bg-gray-950/40 text-gray-100 leading-relaxed selection:bg-teal-500/20 selection:text-teal-200 backdrop-blur-lg border border-white/15 rounded-2xl shadow-[0_0_60px_rgba(0,0,0,0.45)]">
+  {/* ...secciones... */}
        <section
   id="hero"
   className={`section-observer relative min-h-[92vh] flex items-center justify-center text-center overflow-hidden transition-all duration-1000 ${visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
