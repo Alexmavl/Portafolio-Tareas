@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Agrega esta línea
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 const tasksData = [
@@ -16,41 +16,17 @@ const tasksData = [
     imageUrl: '/Imagenes/Formulario.png',
     link: '/tarea2',
     repo: 'https://github.com/Alexmavl/Formulario-Tarea1',
+    desp: 'https://formulario-tarea1.vercel.app/',
   },
   {
     id: 3,
     title: 'Página con aplicaciones responsivas',
     description: 'Implementación de diseño responsive con CSS Grid y Flexbox.',
     imageUrl: '/Imagenes/TareaR.png',
-    link: null, // No hay un enlace interno, por lo que el botón "Ver Tarea" no se mostrará.
+    link: null,
     repo: 'https://github.com/Alexmavl/Tarea-Responsiva',
+    desp: 'https://tarea-responsiva.vercel.app/',
   },
-  /*
-  {
-    id: 4,
-    title: 'Dashboard Interactivo',
-    description: 'Panel de administración con componentes dinámicos.',
-    imageUrl: '',
-    link: null,
-    repo: 'https://github.com/tuusuario/dashboard-repo',
-  },
-  {
-    id: 5,
-    title: 'API REST con Node.js',
-    description: 'Desarrollo de API completa con autenticación JWT.',
-    imageUrl: '',
-    link: null,
-    repo: 'https://github.com/tuusuario/api-repo',
-  },
-  {
-    id: 6,
-    title: 'E-commerce Frontend',
-    description: 'Tienda online con carrito de compras y pasarela de pago.',
-    imageUrl: '',
-    link: null,
-    repo: 'https://github.com/tuusuario/ecommerce-repo',
-  },
-  */
 ];
 
 // Componente de icono GitHub SVG
@@ -138,22 +114,21 @@ const TasksPage = () => {
 
       {/* Task Grid */}
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {tasksData.map(({ id, title, description, imageUrl, link, repo }, index) => (
+        {tasksData.map((task) => (
           <div
-            key={id}
+            key={task.id}
             className="group bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-gray-700 hover:border-blue-500/50 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-blue-500/20"
-            style={{ animationDelay: `${index * 100}ms` }}
           >
             {/* Glow Effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-teal-600 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-300"></div>
             
             <div className="relative">
               {/* Conditional Image */}
-              {imageUrl ? (
+              {task.imageUrl ? (
                 <div className="mb-6 rounded-xl overflow-hidden relative">
                   <img
-                    src={imageUrl}
-                    alt={title}
+                    src={task.imageUrl}
+                    alt={task.title}
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -177,19 +152,19 @@ const TasksPage = () => {
               {/* Content */}
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors duration-300 line-clamp-2">
-                  {title}
+                  {task.title}
                 </h3>
                 <p className="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                  {description}
+                  {task.description}
                 </p>
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col gap-3">
                 {/* GitHub Repository Button */}
-                {repo && (
+                {task.repo && (
                   <a
-                    href={repo}
+                    href={task.repo}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/25 border border-gray-600 hover:border-gray-400"
@@ -201,14 +176,42 @@ const TasksPage = () => {
                 )}
                 
                 {/* Project Link Button */}
-                {link && (
+                {task.link && (
                   <Link
-                    to={link}
+                    to={task.link}
                     className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 border border-blue-500/50 hover:border-teal-400/50"
                   >
                     <CodeIcon className="w-5 h-5" />
                     <span>Ver tarea</span>
                   </Link>
+                )}
+                
+                {/* Deployment Button */}
+                {task.desp && (
+                  <a
+                    href={task.desp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-lime-400 to-green-500 hover:from-lime-500 hover:to-green-600 text-gray-900 font-bold py-3 px-5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-lime-400/30 border-2 border-lime-300 hover:border-green-400 group transform hover:-translate-y-0.5"
+                  >
+                    <svg 
+                      className="w-5 h-5 group-hover:animate-pulse"
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth="2.5" 
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                    <span className="text-sm">VER DESPLIEGUE</span>
+                    <ExternalLinkIcon className="w-4 h-4 opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                    <span className="absolute inset-0 bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  </a>
                 )}
               </div>
             </div>
