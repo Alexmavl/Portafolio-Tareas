@@ -246,35 +246,39 @@ const Homepage: React.FC = () => {
               </GlassCard>
 
               <div className="flex flex-col sm:flex-row md:flex-col gap-4">
-                <Link
-                  to="/tareas"
-                  className="
-                    inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3
-                    ring-1 ring-white/15 bg-white/5 hover:bg-white/10
-                    backdrop-blur-md shadow-lg shadow-black/20
-                    transition text-base font-medium
-                    min-w-[180px]
-                  "
-                >
-                  <FaTasks className="text-lg" />
-                  <span>Ver Tareas</span>
-                </Link>
-                
-                <button 
-                  onClick={scrollToNext} 
-                  className="
-                    inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3
-                    ring-1 ring-teal-400/30 bg-teal-400/10 hover:bg-teal-400/20
-                    backdrop-blur-md shadow-lg shadow-teal-400/10
-                    transition text-base font-medium text-teal-300
-                    min-w-[180px]
-                  "
-                  aria-label="Desplazarse hacia abajo"
-                >
-                  <FaArrowDown className="text-lg" />
-                  <span>Explorar Más</span>
-                </button>
-              </div>
+  {/* Botón Verde Neón */}
+  <Link
+    to="/tareas"
+    className="
+      inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3
+      bg-green-400 hover:bg-green-500
+      shadow-lg shadow-green-500/30
+      transition-all text-base font-bold text-gray-900
+      min-w-[180px] border-2 border-green-300
+      active:scale-95
+    "
+  >
+    <FaTasks className="text-lg" />
+    <span>Ver Tareas</span>
+  </Link>
+  
+  {/* Botón Cyan Neón */}
+  <button 
+    onClick={scrollToNext} 
+    className="
+      inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3
+      bg-cyan-400 hover:bg-cyan-500
+      shadow-lg shadow-cyan-500/30
+      transition-all text-base font-bold text-gray-900
+      min-w-[180px] border-2 border-cyan-300
+      active:scale-95
+    "
+    aria-label="Desplazarse hacia abajo"
+  >
+    <FaArrowDown className="text-lg" />
+    <span>Explorar Mis Ideas</span>
+  </button>
+</div>
             </div>
           </div>
         </div>
