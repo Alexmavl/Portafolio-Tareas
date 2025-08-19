@@ -8,6 +8,8 @@ const tasksData = [
     description: 'Esta es una tarea nos ayuda a comprender el significado de cada sigla que vimos en la clase.',
     imageUrl: '/Imagenes/glosario.jpg',
     link: '/glosario',
+    repo: null,
+    desp: null,
   },
   {
     id: 2,
@@ -195,7 +197,7 @@ const TasksPage = () => {
                     className="flex items-center justify-center gap-2 bg-gradient-to-r from-lime-400 to-green-500 hover:from-lime-500 hover:to-green-600 text-gray-900 font-bold py-3 px-5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-lime-400/30 border-2 border-lime-300 hover:border-green-400 group transform hover:-translate-y-0.5"
                   >
                     <svg 
-                      className="w-5 h-5 group-hover:animate-pulse"
+                      className="w-5 h-5 "
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24" 
