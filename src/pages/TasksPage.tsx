@@ -5,14 +5,14 @@ const tasksData = [
   {
     id: 1,
     title: 'Glosario Desarrollo Web',
-    description: 'Esta es una tarea de ejemplo para el curso de Desarrollo Web.',
+    description: 'Esta es una tarea nos ayuda a comprender el significado de cada sigla que vimos en la clase.',
     imageUrl: '/Imagenes/glosario.jpg',
     link: '/glosario',
   },
   {
     id: 2,
     title: 'Formulario de Registro actualización de datos',
-    description: 'Completar la funcionalidad del sidebar.',
+    description: 'Esta tarea se utilizaron los diferentes input para generar un formulario.',
     imageUrl: '/Imagenes/Formulario.png',
     link: '/tarea2',
     repo: 'https://github.com/Alexmavl/Formulario-Tarea1',
