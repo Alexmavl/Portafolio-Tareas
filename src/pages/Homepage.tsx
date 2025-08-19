@@ -45,8 +45,8 @@ const SectionHeader: React.FC<{
   tagColor: string; 
   gradient: string; 
   title: string; 
-  titleAccent: string; 
-}> = ({ icon, tag, tagColor, gradient, title, titleAccent }) => (
+
+}> = ({ icon, tag, tagColor, gradient, title,  }) => (
   <div className="space-y-4 md:space-y-6">
     <div className="flex items-center gap-3 md:gap-4">
       <div className={`p-2 md:p-3 rounded-full ${gradient} shadow-lg shadow-black/30`}>{icon}</div>
@@ -54,7 +54,7 @@ const SectionHeader: React.FC<{
     </div>
     <h2 className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight">
       {title}{' '}
-      <span className={`bg-gradient-to-r ${titleAccent} bg-clip-text text-transparent block`}>{tag}</span>
+      <span className={`bg-gradient-to-r  bg-clip-text text-transparent block`}>{tag}</span>
     </h2>
   </div>
 );
@@ -299,8 +299,8 @@ const Homepage: React.FC = () => {
                     tag="DESARROLLO"
                     tagColor="text-blue-400"
                     gradient="bg-gradient-to-r from-blue-600 to-cyan-600"
-                    title="El Poder del"
-                    titleAccent="from-blue-400 to-teal-400"
+                    title="El Poder en nuestra manos"
+                  
                   />
 
                   <div className="max-w-xl">
@@ -373,8 +373,8 @@ const Homepage: React.FC = () => {
                     tag="TECNOLOGÍAS"
                     tagColor="text-teal-400"
                     gradient="bg-gradient-to-r from-teal-600 to-green-600"
-                    title="Stack"
-                    titleAccent="from-teal-400 to-green-400"
+                    title="Stacks de los lenguajes"
+                   
                   />
 
                   <GlassCard>
@@ -440,11 +440,11 @@ const Homepage: React.FC = () => {
                 <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
                   <SectionHeader
                     icon={<FaLightbulb className="text-xl md:text-2xl text-white" />}
-                    tag="VISIÓN"
+                    tag="Misión y Visión"
                     tagColor="text-yellow-400"
                     gradient="bg-gradient-to-r from-yellow-600 to-orange-600"
-                    title="Visión y"
-                    titleAccent="from-yellow-400 to-orange-400"
+                    title="Objetivos claros"
+              
                   />
 
                   <GlassCard>
@@ -524,8 +524,8 @@ const Homepage: React.FC = () => {
                     tag="FUTURO"
                     tagColor="text-green-400"
                     gradient="bg-gradient-to-r from-green-600 to-teal-600"
-                    title="Hacia el Futuro"
-                    titleAccent="from-green-400 to-teal-400"
+                    title="Innovación constante"
+          
                   />
 
                   <GlassCard>
