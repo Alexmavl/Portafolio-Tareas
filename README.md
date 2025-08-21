@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+# Portafolio-Tareas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para presentar mi portafolio y gestionar tareas, construida con **React 19 + Vite 7**, **Tailwind CSS 4** (con `@tailwindcss/vite`), **React Router 7**, animaciones con **framer-motion** e íconos con **lucide-react** / **react-icons**.
 
-Currently, two official plugins are available:
+🔗 **Producción**: https://portafolio-tareas.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologías principales
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19**, **Vite 7**, **TypeScript 5**
+- **Tailwind CSS 4** con **@tailwindcss/vite** (plugin oficial para Vite)
+- **React Router 7** para enrutamiento
+- **framer-motion** para animaciones fluidas
+- **lucide-react** y **react-icons** para iconografía
+- ESLint + TypeScript ESLint para linting
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Opinión: se eligio un stack moderno y rápido. Tailwind v4 con el plugin `@tailwindcss/vite` simplifica el setup (sin PostCSS manual), y framer-motion le da vida a la UI sin fricción.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 Requisitos
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Node.js** 18+ (recomendado 20+)
+- **npm** 9+ o **pnpm**/**yarn** (a tu gusto)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📥 Instalación y uso
+
+1) **Clonar el repositorio**
+```bash
+git clone https://github.com/tu-usuario/portafolio-tareas.git
+cd portafolio-tareas
+
+
+2) **Instalar dependencias**
+
+```bash
+npm install
+
+3) **Ejecutar en desarrollo**
+```bash
+npm run dev
+
+☁️ Deploy (Vercel)
+
+Conecta el repositorio a Vercel.
+
+Framework: Vite (Vercel lo detecta).
+
+Comando de build: npm run build
+
+Directorio de salida: dist
+
+Variables de entorno (si las usas) -> Settings > Environment Variables.
+
+Una vez desplegado, Vercel provee una URL (este proyecto ya vive en: https://portafolio-tareas.vercel.app/
+).
+
+
+
