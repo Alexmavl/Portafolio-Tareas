@@ -126,12 +126,22 @@ const tasksData: Task[] = [
     {
     id: 4,
     title: "API de Gestiones",
-    description: "Realizacion de CRUD Expedientes, Indicios y usuario",
+    description: "Realizacion de CRUD Expedientes, Indicios y usuario utilizando TypeScript, nodejs, sql server y docker",
     imageUrl: "",
     link: null,
     repo: "https://github.com/Alexmavl/project-root",
     desp: null,
   },
+
+  {
+    id: 5,
+    title: "Frontend de API",
+    description: "Interfaz de la API de gestiones  utilizando React (Vite + TypeScript), TailwindCSS, Heroicons, Auth Context y SweetAlert2",
+    imageUrl: "",
+    link: null,
+    repo: "https://github.com/Alexmavl/frontend-Gestiones.git",
+    desp: null,
+  }
 ];
 
 /* ====================== Íconos SVG ====================== */
