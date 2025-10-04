@@ -347,7 +347,7 @@ const Homepage: React.FC = () => {
               <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 mb-12 md:mb-16 w-full">
                 {[
                   {
-                    src: "/Imagenes/perfil.jpeg",
+                    src: "/Imagenes/perfil2.png",
                     alt: "Foto de perfil",
                     className: "object-cover",
                     label: "Desarrollador Web",
