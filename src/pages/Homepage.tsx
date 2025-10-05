@@ -339,7 +339,7 @@ const Homepage: React.FC = () => {
                     repeat: Infinity,
                   }}
                 >
-                  Estudiante de Ingeniería en Sistemas de la Información
+                  Estudiante de Ingeniería en Sistemas de Información y Ciencias de la Computación
                 </motion.span>
               </motion.h2>
 
