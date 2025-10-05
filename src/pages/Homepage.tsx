@@ -344,55 +344,49 @@ const Homepage: React.FC = () => {
               </motion.h2>
 
               {/* Contenedor de imágenes */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 mb-12 md:mb-16 w-full">
-                {[
-                  {
-                    src: "/Imagenes/perfil2.png",
-                    alt: "Foto de perfil",
-                    className: "object-cover",
-                    label: "Desarrollador Web",
-                    icon: <FaLaptopCode className="text-blue-400 text-xl" />,
-                    labelClass: "text-blue-400",
-                  },
-                  {
-                    src: "/Imagenes/LogotipoUMG.png",
-                    alt: "Logotipo UMG",
-                    className: "object-contain p-4",
-                    label: "Universidad Mariano Gálvez",
-                    icon: <FaGraduationCap className="text-teal-400 text-xl" />,
-                    labelClass: "text-teal-400",
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="flex flex-col items-center">
-                    {/* GlassCard solo para la imagen */}
-                    <div className="relative group mb-4">
-                      <GlassCard>
-                        <div
-                          className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-[inherit] overflow-hidden kenburns float-slow tilt-hover parallax-1"
-                          style={{
-                            ["--parallax" as any]: `${scrollY * 0.03}px`,
-                          }}
-                        >
-                          <img
-                            src={item.src}
-                            alt={item.alt}
-                            className={`w-full h-full ${item.className}`}
-                          />
-                          {/* Eliminado el overlay con el texto */}
-                        </div>
-                      </GlassCard>
-                    </div>
+             <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 mb-12 md:mb-16 w-full">
+  {[
+    {
+      src: "/Imagenes/perfil2.png",
+      alt: "Foto de perfil",
+      className: "object-cover",
+      label: "Desarrollador Web",
+      icon: <FaLaptopCode className="text-blue-400 text-xl" />,
+      labelClass: "text-blue-400",
+    },
+    {
+      src: "/Imagenes/LogotipoUMG.png",
+      alt: "Logotipo UMG",
+      className: "object-contain p-4",
+      label: "Universidad Mariano Gálvez",
+      icon: <FaGraduationCap className="text-teal-400 text-xl" />,
+      labelClass: "text-teal-400",
+    },
+  ].map((item, index) => (
+    <div key={index} className="flex flex-col items-center">
+      {/* Imagen sin GlassCard */}
+      <div
+        className="relative group mb-4 w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-xl overflow-hidden kenburns float-slow tilt-hover parallax-1"
+        style={{
+          ["--parallax" as any]: `${scrollY * 0.03}px`,
+        }}
+      >
+        <img
+          src={item.src}
+          alt={item.alt}
+          className={`w-full h-full ${item.className}`}
+        />
+      </div>
 
-                    {/* Etiqueta fuera del GlassCard */}
-                    <div
-                      className={`flex items-center gap-2 ${item.labelClass}`}
-                    >
-                      {item.icon}
-                      <span className="text-lg font-medium">{item.label}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      {/* Etiqueta debajo */}
+      <div className={`flex items-center gap-2 ${item.labelClass}`}>
+        {item.icon}
+        <span className="text-lg font-medium">{item.label}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
 
               {/* Descripción y botones */}
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 w-full max-w-4xl">
