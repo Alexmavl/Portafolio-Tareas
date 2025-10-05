@@ -127,7 +127,7 @@ const tasksData: Task[] = [
     id: 4,
     title: "API de Gestiones",
     description: "Realizacion de CRUD Expedientes, Indicios y usuario utilizando TypeScript, nodejs, sql server y docker",
-    imageUrl: "",
+    imageUrl: "/Imagenes/API.png",
     link: null,
     repo: "https://github.com/Alexmavl/project-root",
     desp: null,
@@ -137,9 +137,19 @@ const tasksData: Task[] = [
     id: 5,
     title: "Frontend de API",
     description: "Interfaz de la API de gestiones  utilizando React (Vite + TypeScript), TailwindCSS, Heroicons, Auth Context y SweetAlert2",
-    imageUrl: "",
+    imageUrl: "/Imagenes/Frontend.png",
     link: null,
     repo: "https://github.com/Alexmavl/frontend-Gestiones.git",
+    desp: null,
+  },
+
+  {
+    id: 6,
+    title: "Certificación FreeCodeCamp",
+    description: "Certificación de FreeCodeCamp en Frontend Development Libraries",
+    imageUrl: "/Imagenes/Certificado.jpg",
+    link: "https://freecodecamp.org/certification/fcc1525a113-3029-4454-8a49-2a565f398337/front-end-development-libraries",
+    repo: null,
     desp: null,
   }
 ];
